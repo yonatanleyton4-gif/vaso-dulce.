@@ -3,169 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaso Dulce - Así sabe lo bueno</title>
+    <title>Vaso Dulce - Postre Artesanal de Sasaima</title>
     <style>
         :root {
-            --primary: #8B0000;
-            --accent: #D2691E;
-            --cream: #FFF8DC;
-            --text-dark: #333333;
-            --white: #FFFFFF;
+            --primary: #8B0000;       /* Rojo artesanal / Mora */
+            --primary-dark: #5C0000;  /* Borgoña profundo */
+            --accent: #D2691E;        /* Maní tostado */
+            --cream-bg: #FFFDF9;      /* Blanco cremoso */
+            --card-bg: #FFFFFF;       /* Blanco puro */
+            --text-main: #2D2D2D;     /* Gris oscuro para lectura */
+            --text-muted: #555555;    /* Gris secundario */
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
+
         body {
-            background-color: var(--cream);
-            color: var(--text-dark);
+            background-color: var(--cream-bg);
+            color: var(--text-main);
             line-height: 1.6;
         }
+
+        /* HEADER / HERO */
         header {
-            background: linear-gradient(135deg, #8B0000, #A52A2A);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 4.5rem 1.5rem 3.5rem;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-        }
-        header p {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-        .btn {
+
+        .badge {
             display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.35rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.4rem;
+        }
+
+        header .slogan {
+            font-size: 1.35rem;
+            font-style: italic;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        header .subtitle {
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            opacity: 0.92;
+        }
+
+        /* BOTONES */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--accent);
-            color: var(--white);
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
+            color: white;
+            padding: 0.85rem 1.8rem;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            margin: 0.5rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 10px rgba(210, 105, 30, 0.3);
         }
+
         .btn:hover {
-            background-color: #B8860B;
+            background-color: #B8561B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(210, 105, 30, 0.4);
         }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* CONTENEDOR PRINCIPAL */
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 3.5rem 1.5rem;
         }
+
+        /* TARJETAS DE SECCIÓN */
         .card {
-            background: var(--white);
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: 16px;
             padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
-        h2 {
+
+        .section-title {
             color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .ingredients-grid {
+
+        .section-divider {
+            height: 3px;
+            width: 50px;
+            background-color: var(--accent);
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* GRID DE INGREDIENTES / CARACTERÍSTICAS */
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
-        .ingredient-item {
-            background: #FFFACD;
-            padding: 1.2rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #F0E68C;
+
+        .grid-item {
+            background: #FFF8F5;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
         }
-        .ingredient-item h3 {
+
+        .grid-item h3 {
+            color: var(--primary-dark);
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .grid-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* SECCIÓN OBJETIVOS */
+        .general-objective {
+            background: #FFF5F5;
+            border: 1px solid #FFE0E0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .general-objective h3 {
             color: var(--primary);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
         }
+
         .objectives-list {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
+            list-style: none;
+            display: grid;
+            gap: 1rem;
         }
+
         .objectives-list li {
-            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-main);
+            font-size: 0.98rem;
         }
+
+        .objectives-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.3rem;
+            height: 1.3rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
         footer {
+            background-color: #1A1A1A;
+            color: #CCCCCC;
             text-align: center;
-            padding: 2rem;
-            background: #333;
-            color: var(--white);
+            padding: 2.5rem 1.5rem;
             font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 0.4rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.3rem; }
+            header .slogan { font-size: 1.15rem; }
+            .card { padding: 1.5rem; }
+            .btn { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Encabezado Principal -->
     <header>
+        <span class="badge">SENA • Proyecto Productivo 2026</span>[cite: 1]
         <h1>VASO DULCE</h1>
-        <p>"Así sabe lo bueno"</p>
-        <p style="font-size: 1rem; margin-bottom: 1.5rem;">Postre artesanal a base de cuajada, mermelada de mora y maní</p>
-        <a href="#objetivos" class="btn">Ver Objetivos del Proyecto</a>
+        <p class="slogan">"Así sabe lo bueno"</p>
+        <p class="subtitle">Postre artesanal a base de cuajada, mermelada de mora y maní en capas. Una propuesta innovadora producida en Sasaima, Cundinamarca[cite: 1].</p>
+        
+        <div class="btn-container">
+            <a href="#objetivos" class="btn">Ver Objetivos del Proyecto</a>
+            <a href="#producto" class="btn btn-secondary">Conocer el Producto</a>
+        </div>
     </header>
 
     <div class="container">
-        <!-- Sección del Producto -->
-        <section class="card">
-            <h2>El Producto</h2>
-            <p><strong>Vaso Dulce</strong> transforma la cuajada artesanal en un postre individual presentado en capas, combinando su sabor lácteo suave con mermelada de mora y la textura crocante del maní.</p>
-            
-            <div class="ingredients-grid">
-                <div class="ingredient-item">
+
+        <!-- Sección: El Producto -->
+        <section id="producto" class="card">
+            <h2 class="section-title">El Producto Artesanal</h2>
+            <div class="section-divider"></div>
+            <p><strong>Vaso Dulce</strong> combina la tradición láctea de Sasaima con una presentación moderna y práctica en vaso individual de 6 oz[cite: 1, 4, 5]. Su equilibrio de sabores ofrece una experiencia sensorial única con ingredientes locales seleccionados[cite: 5, 7].</p>
+
+            <div class="grid-3">
+                <div class="grid-item">
                     <h3>Cuajada Artesanal</h3>
-                    <p>Base láctea tradicional y fresca de la región.</p>
+                    <p>Base suave y fresca producida por agricultores y lecheros de la región[cite: 4, 6].</p>
                 </div>
-                <div class="ingredient-item">
+                <div class="grid-item">
                     <h3>Mermelada de Mora</h3>
-                    <p>Toque frutal dulce y equilibrado.</p>
+                    <p>Capa dulcemente acentuada que resalta la tradición frutal de Cundinamarca[cite: 1, 6].</p>
                 </div>
-                <div class="ingredient-item">
-                    <h3>Maní Crocante</h3>
-                    <p>Textura crujiente que complementa cada bocado.</p>
+                <div class="grid-item">
+                    <h3>Crocante de Maní</h3>
+                    <p>Textura crujiente que contrasta perfectamente con la cremosidad láctea[cite: 5, 6].</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Objetivos -->
+        <!-- Sección: Objetivos del Proyecto -->
         <section id="objetivos" class="card">
-            <h2>Objetivos del Proyecto</h2>
-            
-            <div style="margin-bottom: 1.5rem;">
-                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Objetivo General</h3>
+            <h2 class="section-title">Objetivos del Proyecto</h2>
+            <div class="section-divider"></div>
+
+            <!-- Objetivo General -->
+            <div class="general-objective">
+                <h3>Objetivo General</h3>
                 <p>Diseñar, elaborar y comercializar un postre artesanal a base de cuajada, mermelada de mora y maní, bajo la marca Vaso Dulce, como una alternativa innovadora para promover el consumo y la valorización de productos tradicionales de Sasaima[cite: 3].</p>
             </div>
 
-            <div>
-                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Objetivos Específicos</h3>
-                <ul class="objectives-list">
-                    <li>Identificar características, preferencias y necesidades de los consumidores potenciales mediante un estudio de mercado[cite: 3].</li>
-                    <li>Estandarizar el proceso de elaboración del postre, garantizando calidad, higiene, conservación y presentación[cite: 3].</li>
-                    <li>Determinar los costos de producción y establecer un precio de venta que permita rentabilidad[cite: 3].</li>
-                    <li>Diseñar estrategias de promoción y comercialización utilizando medios físicos y digitales[cite: 3].</li>
-                    <li>Evaluar la aceptación del producto mediante encuesta posterior a la degustación o compra[cite: 3].</li>
-                </ul>
-            </div>
+            <!-- Objetivos Específicos -->
+            <h3 style="color: var(--primary-dark); margin-bottom: 1rem; font-size: 1.15rem;">Objetivos Específicos</h3>
+            <ul class="objectives-list">
+                <li>Identificar características, preferencias y necesidades de los consumidores potenciales mediante un estudio de mercado[cite: 3].</li>
+                <li>Estandarizar el proceso de elaboración del postre, garantizando calidad, higiene, conservación y presentación[cite: 3].</li>
+                <li>Determinar los costos de producción y establecer un precio de venta que permita rentabilidad[cite: 3].</li>
+                <li>Diseñar estrategias de promoción y comercialización utilizando medios físicos y digitales[cite: 3].</li>
+                <li>Evaluar la aceptación del producto mediante encuesta posterior a la degustación o compra[cite: 3].</li>
+            </ul>
 
-            <div style="margin-top: 2rem; text-align: center;">
-                <a href="objetivos.pdf" target="_blank" class="btn">Ver Diapositivas Completas (PDF)</a>
+            <!-- Botón opcional para el PDF -->
+            <div style="margin-top: 2.5rem; text-align: center;">
+                <a href="objetivos.pdf" target="_blank" class="btn" style="background-color: var(--primary);">
+                    📄 Ver Presentación en PDF
+                </a>
             </div>
         </section>
+
     </div>
 
+    <!-- Pie de página -->
     <footer>
-        <p>Vaso Dulce • I.E.D. Nuestra Señora de Fátima • Técnico en Sistemas Teleinformáticos • Sasaima, Cundinamarca[cite: 2]</p>
+        <p><strong>Vaso Dulce</strong> • Sustentación de Proyecto Productivo 2026[cite: 1]</p>
+        <p>I.E.D. Nuestra Señora de Fátima • Técnico en Sistemas Teleinformáticos[cite: 1]</p>
+        <p style="color: #888888; font-size: 0.8rem; margin-top: 0.5rem;">Sasaima, Cundinamarca, Colombia[cite: 1]</p>
     </footer>
 
 </body>
