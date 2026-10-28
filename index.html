@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaso Dulce | Así sabe lo bueno</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-crema: #FFFDF9;
+            --tarjeta-bg: #FFFFFF;
+            --texto-oscuro: #2D1E18;
+            --texto-suave: #665650;
+            --rojo-fresa: #D92546;
+            --mora-oscura: #5C1D38;
+            --mani-dorado: #C88330;
+            --borde-suave: #F0E6DA;
+            --sombrecita: 0 10px 30px rgba(45, 30, 24, 0.05);
+            --sombrecita-hover: 0 15px 35px rgba(45, 30, 24, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-crema);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .slogan {
+            font-family: 'Fredoka', cursive;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar Sencilla */
+        header {
+            padding: 24px 0;
+            background: var(--bg-crema);
+            border-bottom: 1px solid var(--borde-suave);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-title {
+            font-size: 1.6rem;
+            color: var(--mora-oscura);
+        }
+
+        .btn-ws {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-ws:hover {
+            background-color: #1eb956;
+            transform: translateY(-2px);
+        }
+
+        /* Hero / Presentación */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(217, 37, 70, 0.08);
+            color: var(--rojo-fresa);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--texto-oscuro);
+            margin-bottom: 8px;
+        }
+
+        .slogan {
+            font-size: 1.6rem;
+            color: var(--rojo-fresa);
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--texto-suave);
+            max-width: 600px;
+            margin: 0 auto 32px auto;
+        }
+
+        .btn-hero {
+            padding: 16px 36px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+        }
+
+        /* Vaso Ilustrado Minimalista en CSS */
+        .vaso-preview {
+            width: 180px;
+            height: 260px;
+            margin: 40px auto 0 auto;
+            background: rgba(255, 255, 255, 0.6);
+            border: 3px solid #FFFFFF;
+            border-radius: 8px 8px 40px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .capa-top {
+            height: 25%;
+            background: var(--mani-dorado);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .capa-mid {
+            height: 30%;
+            background: var(--rojo-fresa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .capa-base {
+            height: 45%;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--texto-suave);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Componentes / Ingredientes */
+        .ingredientes {
+            padding: 60px 0;
+            background: var(--tarjeta-bg);
+            border-radius: 32px;
+            margin: 40px auto;
+            box-shadow: var(--sombrecita);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--texto-oscuro);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .ingrediente-card {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .ingrediente-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .ingrediente-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--mora-oscura);
+        }
+
+        .ingrediente-card p {
+            font-size: 0.95rem;
+            color: var(--texto-suave);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--borde-suave);
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+            margin-bottom: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .slogan { font-size: 1.3rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-title">Vaso Dulce</div>
+            <a href="https://wa.me/?text=Hola!%20Quiero%20pedir%20un%20Vaso%20Dulce" target="_blank" class="btn-ws">
+                Pedir por WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="hero-badge">Postre Artesanal</span>
+            <h1>Vaso Dulce</h1>
+            <div class="slogan">"Así sabe lo bueno"</div>
+            <p class="hero-desc">
+                La combinación perfecta entre la suavidad de la cuajada de leche fresca, el dulzor de la mermelada artesanal y el toque crujiente del maní partido.
+            </p>
+            <a href="https://wa.me/?text=Hola!%20Quiero%20pedir%20un%20Vaso%20Dulce" target="_blank" class="btn-ws btn-hero">
+                Pedir por WhatsApp
+            </a>
+
+            <!-- Ilustración sencilla del vaso por capas -->
+            <div class="vaso-preview">
+                <div class="capa-top">Maní Partido</div>
+                <div class="capa-mid">Mermelada</div>
+                <div class="capa-base">Cuajada Fresca</div>
+            </div>
+        </section>
+
+        <!-- Ingredientes principales -->
+        <section class="ingredientes">
+            <h2 class="section-title">Nuestros 3 Ingredientes Clave</h2>
+            <div class="grid-3">
+                <div class="ingrediente-card">
+                    <span class="ingrediente-icon">🥛</span>
+                    <h3>Cuajada de Leche</h3>
+                    <p>Base cremosa, fresca y de textura suave elaborada artesanalmente.</p>
+                </div>
+                <div class="ingrediente-card">
+                    <span class="ingrediente-icon">🍓</span>
+                    <h3>Mermelada Artesanal</h3>
+                    <p>Capa frutal concentrada hecha con frutas cuidadosamente seleccionadas.</p>
+                </div>
+                <div class="ingrediente-card">
+                    <span class="ingrediente-icon">🥜</span>
+                    <h3>Maní Crocante</h3>
+                    <p>Toque crocante y tostado partido para lograr el equilibrio perfecto.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p><strong>Vaso Dulce</strong> &mdash; "Así sabe lo bueno"</p>
+            <a href="https://wa.me/?text=Hola!%20Quiero%20pedir%20un%20Vaso%20Dulce" target="_blank" class="btn-ws">
+                Haz tu pedido directo
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
