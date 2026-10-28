@@ -3,310 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaso Dulce | Así sabe lo bueno</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Vaso Dulce - Así sabe lo bueno</title>
     <style>
         :root {
-            --bg-crema: #FFFDF9;
-            --tarjeta-bg: #FFFFFF;
-            --texto-oscuro: #2D1E18;
-            --texto-suave: #665650;
-            --rojo-fresa: #D92546;
-            --mora-oscura: #5C1D38;
-            --mani-dorado: #C88330;
-            --borde-suave: #F0E6DA;
-            --sombrecita: 0 10px 30px rgba(45, 30, 24, 0.05);
-            --sombrecita-hover: 0 15px 35px rgba(45, 30, 24, 0.1);
+            --primary: #8B0000;
+            --accent: #D2691E;
+            --cream: #FFF8DC;
+            --text-dark: #333333;
+            --white: #FFFFFF;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
-
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-crema);
-            color: var(--texto-oscuro);
+            background-color: var(--cream);
+            color: var(--text-dark);
             line-height: 1.6;
         }
-
-        h1, h2, h3, .slogan {
-            font-family: 'Fredoka', cursive;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Navbar Sencilla */
         header {
-            padding: 24px 0;
-            background: var(--bg-crema);
-            border-bottom: 1px solid var(--borde-suave);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-title {
-            font-size: 1.6rem;
-            color: var(--mora-oscura);
-        }
-
-        .btn-ws {
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-
-        .btn-ws:hover {
-            background-color: #1eb956;
-            transform: translateY(-2px);
-        }
-
-        /* Hero / Presentación */
-        .hero {
-            padding: 60px 0;
+            background: linear-gradient(135deg, #8B0000, #A52A2A);
+            color: var(--white);
             text-align: center;
+            padding: 4rem 1rem;
         }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(217, 37, 70, 0.08);
-            color: var(--rojo-fresa);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 {
+        header h1 {
             font-size: 3rem;
-            color: var(--texto-oscuro);
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
         }
-
-        .slogan {
-            font-size: 1.6rem;
-            color: var(--rojo-fresa);
-            margin-bottom: 20px;
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: var(--texto-suave);
-            max-width: 600px;
-            margin: 0 auto 32px auto;
-        }
-
-        .btn-hero {
-            padding: 16px 36px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-        }
-
-        /* Vaso Ilustrado Minimalista en CSS */
-        .vaso-preview {
-            width: 180px;
-            height: 260px;
-            margin: 40px auto 0 auto;
-            background: rgba(255, 255, 255, 0.6);
-            border: 3px solid #FFFFFF;
-            border-radius: 8px 8px 40px 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .capa-top {
-            height: 25%;
-            background: var(--mani-dorado);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        .capa-mid {
-            height: 30%;
-            background: var(--rojo-fresa);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        .capa-base {
-            height: 45%;
-            background: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--texto-suave);
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        /* Componentes / Ingredientes */
-        .ingredientes {
-            padding: 60px 0;
-            background: var(--tarjeta-bg);
-            border-radius: 32px;
-            margin: 40px auto;
-            box-shadow: var(--sombrecita);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--texto-oscuro);
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .ingrediente-card {
-            text-align: center;
-            padding: 24px;
-        }
-
-        .ingrediente-icon {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .ingrediente-card h3 {
+        header p {
             font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: var(--mora-oscura);
+            font-style: italic;
+            margin-bottom: 1.5rem;
         }
-
-        .ingrediente-card p {
-            font-size: 0.95rem;
-            color: var(--texto-suave);
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin: 0.5rem;
         }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
+        .btn:hover {
+            background-color: #B8860B;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .ingredient-item {
+            background: #FFFACD;
+            padding: 1.2rem;
+            border-radius: 8px;
             text-align: center;
-            border-top: 1px solid var(--borde-suave);
-            margin-top: 60px;
+            border: 1px solid #F0E68C;
         }
-
-        footer p {
+        .ingredient-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .objectives-list {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .objectives-list li {
+            margin-bottom: 0.8rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #333;
+            color: var(--white);
             font-size: 0.9rem;
-            color: var(--texto-suave);
-            margin-bottom: 16px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.3rem; }
-            .slogan { font-size: 1.3rem; }
-            .grid-3 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado -->
     <header>
-        <div class="container header-content">
-            <div class="logo-title">Vaso Dulce</div>
-            <a href="https://wa.me/?text=Hola!%20Quiero%20pedir%20un%20Vaso%20Dulce" target="_blank" class="btn-ws">
-                Pedir por WhatsApp
-            </a>
-        </div>
+        <h1>VASO DULCE</h1>
+        <p>"Así sabe lo bueno"</p>
+        <p style="font-size: 1rem; margin-bottom: 1.5rem;">Postre artesanal a base de cuajada, mermelada de mora y maní</p>
+        <a href="#objetivos" class="btn">Ver Objetivos del Proyecto</a>
     </header>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <span class="hero-badge">Postre Artesanal</span>
-            <h1>Vaso Dulce</h1>
-            <div class="slogan">"Así sabe lo bueno"</div>
-            <p class="hero-desc">
-                La combinación perfecta entre la suavidad de la cuajada de leche fresca, el dulzor de la mermelada artesanal y el toque crujiente del maní partido.
-            </p>
-            <a href="https://wa.me/?text=Hola!%20Quiero%20pedir%20un%20Vaso%20Dulce" target="_blank" class="btn-ws btn-hero">
-                Pedir por WhatsApp
-            </a>
-
-            <!-- Ilustración sencilla del vaso por capas -->
-            <div class="vaso-preview">
-                <div class="capa-top">Maní Partido</div>
-                <div class="capa-mid">Mermelada</div>
-                <div class="capa-base">Cuajada Fresca</div>
-            </div>
-        </section>
-
-        <!-- Ingredientes principales -->
-        <section class="ingredientes">
-            <h2 class="section-title">Nuestros 3 Ingredientes Clave</h2>
-            <div class="grid-3">
-                <div class="ingrediente-card">
-                    <span class="ingrediente-icon">🥛</span>
-                    <h3>Cuajada de Leche</h3>
-                    <p>Base cremosa, fresca y de textura suave elaborada artesanalmente.</p>
+    <div class="container">
+        <!-- Sección del Producto -->
+        <section class="card">
+            <h2>El Producto</h2>
+            <p><strong>Vaso Dulce</strong> transforma la cuajada artesanal en un postre individual presentado en capas, combinando su sabor lácteo suave con mermelada de mora y la textura crocante del maní.</p>
+            
+            <div class="ingredients-grid">
+                <div class="ingredient-item">
+                    <h3>Cuajada Artesanal</h3>
+                    <p>Base láctea tradicional y fresca de la región.</p>
                 </div>
-                <div class="ingrediente-card">
-                    <span class="ingrediente-icon">🍓</span>
-                    <h3>Mermelada Artesanal</h3>
-                    <p>Capa frutal concentrada hecha con frutas cuidadosamente seleccionadas.</p>
+                <div class="ingredient-item">
+                    <h3>Mermelada de Mora</h3>
+                    <p>Toque frutal dulce y equilibrado.</p>
                 </div>
-                <div class="ingrediente-card">
-                    <span class="ingrediente-icon">🥜</span>
+                <div class="ingredient-item">
                     <h3>Maní Crocante</h3>
-                    <p>Toque crocante y tostado partido para lograr el equilibrio perfecto.</p>
+                    <p>Textura crujiente que complementa cada bocado.</p>
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Pie de página -->
+        <!-- Sección de Objetivos -->
+        <section id="objetivos" class="card">
+            <h2>Objetivos del Proyecto</h2>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Objetivo General</h3>
+                <p>Diseñar, elaborar y comercializar un postre artesanal a base de cuajada, mermelada de mora y maní, bajo la marca Vaso Dulce, como una alternativa innovadora para promover el consumo y la valorización de productos tradicionales de Sasaima[cite: 3].</p>
+            </div>
+
+            <div>
+                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Objetivos Específicos</h3>
+                <ul class="objectives-list">
+                    <li>Identificar características, preferencias y necesidades de los consumidores potenciales mediante un estudio de mercado[cite: 3].</li>
+                    <li>Estandarizar el proceso de elaboración del postre, garantizando calidad, higiene, conservación y presentación[cite: 3].</li>
+                    <li>Determinar los costos de producción y establecer un precio de venta que permita rentabilidad[cite: 3].</li>
+                    <li>Diseñar estrategias de promoción y comercialización utilizando medios físicos y digitales[cite: 3].</li>
+                    <li>Evaluar la aceptación del producto mediante encuesta posterior a la degustación o compra[cite: 3].</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="objetivos.pdf" target="_blank" class="btn">Ver Diapositivas Completas (PDF)</a>
+            </div>
+        </section>
+    </div>
+
     <footer>
-        <div class="container">
-            <p><strong>Vaso Dulce</strong> &mdash; "Así sabe lo bueno"</p>
-            <a href="https://wa.me/?text=Hola!%20Quiero%20pedir%20un%20Vaso%20Dulce" target="_blank" class="btn-ws">
-                Haz tu pedido directo
-            </a>
-        </div>
+        <p>Vaso Dulce • I.E.D. Nuestra Señora de Fátima • Técnico en Sistemas Teleinformáticos • Sasaima, Cundinamarca[cite: 2]</p>
     </footer>
 
 </body>
